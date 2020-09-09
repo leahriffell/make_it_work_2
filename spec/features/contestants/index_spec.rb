@@ -22,12 +22,12 @@ RSpec.describe 'as a visitor, when I visit the contestants index page', type: :f
 
     within("#contestant-#{@contestant_1.id}") do
       expect(page).to have_content(@contestant_1.name)
-      expect(page).to have_content("Projects: #{@contestant_1.projects.map {|project| project.name}.join(", ")}")
+      expect(page).to have_content("Projects: #{@contestant_1.all_projects.join(", ")}")
     end
 
     within("#contestant-#{@contestant_2.id}") do
       expect(page).to have_content(@contestant_2.name)
-      expect(page).to have_content("Projects: #{@contestant_2.projects.map {|project| project.name}.join(", ")}")
+      expect(page).to have_content("Projects: #{@contestant_2.all_projects.join(", ")}")
     end
   end
 end
